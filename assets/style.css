@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.footer-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    color: white;
+    width: auto;
+    padding: 20px;
+    text-align: right;
+    z-index: -1;
+}
+
+.footer-content p {
+    font-size: 24px;
+    font-weight: 500;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.nivon {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row; 
+    position: relative;
+}
+
+.nivon::before {
+    content: '';
+    background: url("bg.png") center/cover no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: blur(7px);
+}
+
+.sidebar {
+    width: 250px;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar ul li {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 30px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: 0.3s;
+}
+
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar ul li a:hover {
+    background-color: rgba(240, 248, 255, 0.336);
+    border-radius: 5px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.content .main-text {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 50px;
+}
+
+.content .main-text h1 {
+    font-size: 100px;
+    line-height: 1;
+    color: white;
+    margin: 0 0 45px;
+}
+
+.content .main-text h2 {
+    color: white;
+    line-height: 1;
+    margin-top: -50px;
+}
+
+.btn-container {
+    position: relative;
+    display: inline-block; 
+}
+
+.loading-spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite; 
+    position: absolute;
+    top: 43%; 
+    left: -30px; 
+    transform: translateY(-43%);
+}
+
+.console-container {
+    display: none;
+    flex-direction: column;
+    width: 55%;
+    height: calc(100vh - 80px);
+    height: 75%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.089);
+    border-radius: 10px;
+    color: white;
+}
+.console-output {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.123);
+    border-radius: 5px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.console-input {
+    display: flex;
+}
+.console-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0; 
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.123);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;    
+}
+.console-input input::placeholder {
+    color: rgb(255, 255, 255) !important;
+}
+.console-input button {
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 0;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.console-input button:hover {
+    background-color: #9c9c9c;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.content .main-text .btn {
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background: white;
+    border: 1px solid white;
+    padding: 12px 45px;
+    line-height: 1.4;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: .4s;
+    user-select: none;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.content .main-text .btn#stop {
+    border: 1px solid rgba(255, 255, 255);
+    color: white;
+    background: transparent;
+}
+
+.content .main-text .btn:hover {
+    cursor: pointer;
+    transition: .4s;
+
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+}
